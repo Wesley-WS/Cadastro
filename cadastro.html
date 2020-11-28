@@ -1,0 +1,127 @@
+<?php
+$link = mysqli_connect("127.0.0.1", "root", "", "localhost");
+
+if (!$link) {
+    echo "Error: Unable to connect to MySQL." . PHP_EOL;
+    echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
+    echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
+    exit;
+}
+
+echo "Success: A proper connection to MySQL was made! The my_db database is great." . PHP_EOL;
+echo "Host information: " . mysqli_get_host_info($link) . PHP_EOL;
+
+mysqli_close($link);
+?>
+
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <title>Mugetsu.com</title>
+        <link href="css/estilos.css" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    </head>
+    <body>
+        <div class="container">
+            <form>
+                <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="nome" >Nome Completo</label>
+                    <input class="form-control" type="text" id="nome" placeholder="Nome"/>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="email" >Endereço de email</label>
+                    <input class="form-control" type="text" id="email" placeholder="Email"/>
+                    <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="senha" >Senha</label>
+                    <input class="form-control" type="password" id="senha" placeholder="Senha"/>
+                </div>
+                </div>
+                <div class="form-group">
+                    <label for="selecao">Marca Favorita</label>
+                    <select class="form-control" id="selecao">
+                        <option>Escolha uma opção</option>
+                        <option>Aple</option>
+                        <option>Sansung</option>
+                        <option>Motorola</option>
+                        <option>Asus</option>
+                        <option>Sony</option>
+                    </select>
+                </div>
+                
+                <div><p>Genero</p></div>
+                
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="" id="checkpadrao">
+                    <label class="form-check-label" for="checkpadrao">
+                        Masculino
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" value="" id="checkpadrao">
+                    <label class="form-check-label" for="checkpadrao">
+                        Feminino
+                    </label>
+                </div>
+                
+                <div class="form-group">
+                    <label for="comentario">Sugestões</label>
+                    <textarea class="form-control" id="comentario"></textarea>
+                </div>
+                
+                
+                <div class="form-group">
+                    <label>
+                        Como ficou sabendo do site?
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="amigos" id="amigos" value="opcao1" checked>
+                      <label class="form-check-label" for="amigos">
+                            Através de amigos
+                      </label>
+                </div>
+                <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="anucios" id="anucios" value="opcao2">
+                      <label class="form-check-label" for="anucios">
+                            Anuncios na internet
+                      </label>
+                </div>
+                <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="tv" id="tv" value="opcao1" checked>
+                      <label class="form-check-label" for="tv">
+                            Anuncios na tv
+                      </label>
+                </div>
+                <div class="form-group form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="radio" id="radio" value="opcao2">
+                      <label class="form-check-label" for="radio">
+                            Anuncios de radio
+                      </label>
+                </div>
+                
+                <div class="form-group">
+                    <input class="btn btn-primary" type="submit" value="Enviar">
+                </div>
+            </form>
+            
+        </div>
+        
+        
+            
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/bootstrap.min.js.map"></script>
+        <script src="js/jquery.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>
